@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'notes#index'
   post 'notes' => 'notes#create'
   delete 'notes/:id' => 'notes#destroy'
+  patch 'notes/:id' => 'notes#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,16 +8,16 @@ class NotesController < ApplicationController
     render_partial
   end
 
-  def show
-
-  end
 
   def update
+    note = Note.find(params[:id])
+    note.update(content: params[:content])
+    note.save
+    render_partial
   end
 
   def destroy
-    note = Note.find(params[:id])
-    note.destroy
+    Note.find(params[:id]).destroy
     render_partial
   end
 
